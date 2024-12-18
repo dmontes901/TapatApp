@@ -1,9 +1,55 @@
-flowchart TD
-    A[Cliente - Vista de entrada] -->|Envia datos| B[Cliente - DAO]
-    B -->|Petición HTTP| C[Servidor - Webservice]
-    C -->|Valida datos| D[Servidor - DAO Usuarios]
-    D -->|Consulta datos| E[Base de Datos]
-    E -->|Responde datos| D
-    D -->|Devuelve datos| C
-    C -->|Respuesta HTTP| B
-    B -->|Datos procesados| F[Cliente - Vista de resultados]
+erDiagram
+    User {
+        int id
+        varchar(20) username
+        varchar(20) password
+        varchar(50) email
+    }
+
+    Rol {
+        int id
+        varchar(20) type_rol
+    }
+
+    Child {
+        int id
+        varchar(50) child_name
+        int sleep_average
+        int treatment_id
+        int time
+    }
+
+    Treatment {
+        int id
+        varchar(11) name
+    }
+
+    Status {
+        int id
+        varchar(40) name
+    }
+
+    Tap {
+        int id
+        int child_id
+        int status_id
+        int user_id
+        datetime init
+        datetime end
+    }
+
+    RelationUserChild {
+        int user_id
+        int child_id
+        int rol_id
+    }
+
+    User ||--o| RelationUserChild : "id"
+    Rol ||--o| RelationUserChild : "id"
+    RelationUserChild ||--|{ Child : "child_id"
+
+    Child ||--|{ Tap : "id"
+    User ||--|{ Tap : "id"
+    Status ||--|{ Tap : "status_id"
+
+    Child ||--|o Treatment : "treatment_id"
