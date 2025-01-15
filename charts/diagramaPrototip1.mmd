@@ -1,5 +1,5 @@
 flowchart TD
-    A[Cliente - Input  username] -->|Envia datos| B[Cliente - DAO]
+    A[Cliente - Input username] -->|Envia datos| B[Cliente - DAO getUserByUsername]
     B -->|Petició HTTP| C[Servidor - Webservice]
     C -->|Valida datos| D[Servidor - DAO Usuarios]
     D -->|Consulta datos| E[Base de Datos]
