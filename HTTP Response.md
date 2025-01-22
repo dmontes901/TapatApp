@@ -1,11 +1,11 @@
-2 Http Response
+## 2 Http Response
+
 Una HTTP Response (Resposta HTTP) és la resposta que el servidor envia al client després d'una petició HTTP (com ara una petició GET o POST). La resposta inclou informació sobre si la petició va ser procesada correctament o si va ocórrer un error.
 
 Una resposta HTTP general es compon de tres parts principals:
-
-Línia d'estat (Status Line)
-Headers
-Body
+  - Línia d'estat (Status Line)
+  - Headers
+  · Body
 
 2.1 Línia d'estat (Status Line)
 El protocol de la resposta: Normalment HTTP/1.1 o HTTP/2.
