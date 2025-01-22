@@ -42,28 +42,31 @@ IMPORTANT : heu d’utilitzar la ruta del curl que heu instal·lat amb scoop. A 
 
 Executar una petició GET:
 
-PS C:\Users\amallad2> C:\Users\amallad2\scoop\apps\curl\current\bin\curl https://proven.cat
+PS C:\Users\dmo0316> C:\Users\dmo0316\scoop\apps\curl\current\bin\curl 
+  https://proven.cat
 
-PS> C:\Users\amallad2\scoop\apps\curl\current\bin\curl  https://api.chucknorris.io/jokes/categories
+PS> C:\Users\dmo0316\scoop\apps\curl\current\bin\curl
+  https://api.chucknorris.io/jokes/categories
 
-PS> C:\Users\amallad2\scoop\apps\curl\current\bin\curl  https://api.chucknorris.io/jokes/random?category=dev
-
-
+PS> C:\Users\dmo0316\scoop\apps\curl\current\bin\curl  
+  https://api.chucknorris.io/jokes/random?category=dev
 
 Desar la resposta en un fitxer:
 
-PS C:\Users\amallad2> C:\Users\amallad2\scoop\apps\curl\current\bin\curl -o fitxer.html https://api.chucknorris.io/jokes/random?category=dev
+PS C:\Users\dmo0316> C:\Users\dmo0316\scoop\apps\curl\current\bin\curl -o fitxer.html
+  https://api.chucknorris.io/jokes/random?category=dev
 
+Executar petició POST:  
+https://www.postman.com/postman/published-postman-templates/documentation/ae2ja6x/postman-echo?ctx=documentation
 
-Executar petició POST:  https://www.postman.com/postman/published-postman-templates/documentation/ae2ja6x/postman-echo?ctx=documentation
+PS> C:\Users\amallad2\scoop\apps\curl\current\bin\curl -X POST -H "Content-Type: application/json"  -d "{'test': 'value'}" 
+https://postman-echo.com/post
 
-PS> C:\Users\amallad2\scoop\apps\curl\current\bin\curl -X POST -H "Content-Type: application/json"  -d "{'test': 'value'}" https://postman-echo.com/post
-
-1.3 Mime Types
+### 1.3 Mime Types
 
 Els MIME types (Multipurpose Internet Mail Extensions) són estàndards utilitzats per identificar el tipus de contingut d'un fitxer o dades en comunicacions a través d'internet. Originalment, es van crear per correu electrònic, però avui dia s'utilitzen àmpliament en protocols com HTTP per indicar el tipus de contingut d'una resposta o sol·licitud.
 
-1. multipart/form-data
+#### 1. multipart/form-data
 multipart/form-data és un tipus de MIME utilitzat principalment per enviar formularis HTML que contenen fitxers o dades binàries (per exemple, imatges, documents, etc.). Aquest tipus de codificació permet enviar diversos tipus de dades (com text i fitxers) en una sola petició HTTP. És el més utilitzat en formularis que permeten la càrrega de fitxers.
 
 Petició Http POST
@@ -77,29 +80,25 @@ Petició Http POST
     <input type="submit" value="Enviar">
 </form>
 
-es genera una petició POST
+Es genera una petició POST
 
 POST /upload HTTP/1.1
 Host: example.com
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Length: 5000
 
-
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="name"
-
 
 Joan
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="file"; filename="image.jpg"
 Content-Type: image/jpeg
 
-
 (binary data of the image)
 ----WebKitFormBoundary7MA4YWxkTrZu0gW--
 
-
-2. application/x-www-form-urlencoded
+#### 2. application/x-www-form-urlencoded
 application/x-www-form-urlencoded és el tipus de codificació per defecte utilitzat quan s’envien dades a través d’un formulari HTML utilitzant el mètode POST (o GET en alguns casos). Les dades s’envien com a una cadena de text amb parelles clau-valor, on les claus i els valors estan separats per = i cada parella es separa per &.
 
 Exemple petició Http  POST:
@@ -109,18 +108,16 @@ Host: example.com
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 27
 
-
 username=John+Doe&age=30&city=New+York
 
 
-3. application/json
+#### 3. application/json
 application/json és el tipus MIME utilitzat per enviar dades en format JSON. JSON (JavaScript Object Notation) és un format lleuger per emmagatzemar i transportar dades, àmpliament utilitzat en API RESTful i serveis web moderns. Aquest tipus s’utilitza per a la comunicació entre clients i servidors que requereixen enviar dades estructurades de forma més complexa, com objects o arrays.
 
 POST /submit HTTP/1.1
 Host: example.com
 Content-Type: application/json
 Content-Length: 42
-
 
 {
   "username": "John Doe",
