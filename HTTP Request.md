@@ -8,9 +8,9 @@ Un HTTP request és una sol·licitud que un client (normalment un navegador web 
   - PUT: Actualitzar recursos existents al servidor.
   - DELETE: Eliminar un recurs al servidor.
   
-  3. URL (Uniform Resource Locator): Especifica el recurs que es vol accedir o modificar.
-  4. Headers: Informació addicional sobre la sol·licitud, com ara el tipus de dades acceptades, l'autenticació, o la configuració de codificació.
-  5. Body (opcional): En cas de mètodes com POST o PUT, conté les dades que s'envien al servidor (per exemple, dades de formularis o informació en format JSON).
+  2. URL (Uniform Resource Locator): Especifica el recurs que es vol accedir o modificar.
+  3. Headers: Informació addicional sobre la sol·licitud, com ara el tipus de dades acceptades, l'autenticació, o la configuració de codificació.
+  4. Body (opcional): En cas de mètodes com POST o PUT, conté les dades que s'envien al servidor (per exemple, dades de formularis o informació en format JSON).
 
 ### 1.1 Exemples de HTTP request
 GET request:
