@@ -7,5 +7,5 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 
 # HTTP
 
-- [HTTP REQUEST](HTTP Request.md)
-- [HTTP RESPONSE](HTTP Response.md)
+- [HTTP REQUEST](HTTPRequest.md)
+- [HTTP RESPONSE](HTTPResponse.md)
