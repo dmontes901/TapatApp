@@ -13,7 +13,8 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 # Definició dels EndPoints del Servei Web:
 
   - Descripció: Servei que consulta un User per Username
-  - End-point: /prototip1/getuser
+  - HOST: 192.168.144.158:10050
+  - End-point: http://192.168.144.158:10050/users/getUser
   - Method: GET
   - Parametres: username
   - Resposta:
