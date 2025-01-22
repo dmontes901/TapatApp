@@ -14,7 +14,7 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 
   - Descripció: Servei que consulta un User per Username
   - HOST: 192.168.144.158:10050
-  - End-point: http://192.168.144.158:10050/tapatap/getUser
+  - End-point: http://192.168.144.158:10050/tapatapp/getUser
   - Method: GET
   - Parametres: username
   - Resposta:
