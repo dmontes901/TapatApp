@@ -18,6 +18,6 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
   - Parametres: username
   - Resposta:
     
-    Code 200 Ok: {id=1,"username":"userr1", "password":"123456", "email":"mail@gmail.com"}
+    Code 200 Ok: {id=1,"username":"dani", "password":"montes", "email":"danimontes@gmail.com"}
 
     Code 400 No trobat: {"error": "No trobat"}
