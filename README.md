@@ -14,7 +14,7 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
   - HOST: 192.168.144.158:10050
 
 | Descripció  | End-point     | Method     |Tipus de petició|Parametres|
-| :---        |  :---        |  :---        |  :---         |  :---     |  :--- | 
+| :---        |  :---        |  :---        |  :---         |  :---     |
 | Servei que consulta un User per Username  | http://192.168.144.158:10050/tapatapp/getUser |GET | application/json |  username (string) |
   
   - Resposta:
