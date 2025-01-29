@@ -11,11 +11,11 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 - [HTTP RESPONSE](HTTPResponse.md)
 
 # Definició dels EndPoints del Servei Web:
-  - HOST: 192.168.144.158:10050
+  - HOST: 192.168.144.158:5000
 
 | Descripció  | End-point     | Method     |Tipus de petició|Parametres|
 | :---        |  :---        |  :---        |  :---         |  :---     |
-| Servei que consulta un User per Username  | http://192.168.144.158:10050/tapatapp/getUser |GET | application/json |  username |
+| Servei que consulta un User per Username  | http://192.168.144.158:5000/tapatapp/getUser |GET | application/json |  username |
   
   - Còdigos de Resposta HTTP:
     
