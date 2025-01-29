@@ -33,7 +33,6 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 }
 
 ### 2. 400 Bad Request - La sol·licitud està mal formada o li falten paràmetres:
-
 {
 "status": "error",
   "message": "Paràmetre 'username' no proporcionat o incorrecte"
