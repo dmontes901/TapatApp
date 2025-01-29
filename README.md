@@ -11,12 +11,12 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 - [HTTP RESPONSE](HTTPResponse.md)
 
 # Definició dels EndPoints del Servei Web:
-
-  - Descripció: Servei que consulta un User per Username
   - HOST: 192.168.144.158:10050
-  - End-point: http://192.168.144.158:10050/tapatapp/getUser
-  - Method: GET
-  - Parametres: username
+
+| Descripció  | End-point     | Method     |Tipus de petició|Parametres|
+| :---        |  :---        |  :---        |  :---         |  :---     |  :--- | 
+| Servei que consulta un User per Username  | http://192.168.144.158:10050/tapatapp/getUser |GET | application/json |  username (string) |
+  
   - Resposta:
     
     Code 200 Ok: {id=1,"username":"dani", "password":"montes", "email":"danimontes@gmail.com"}
