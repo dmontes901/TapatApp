@@ -56,7 +56,8 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 ### 6. 422 Unprocessable Entity - La sol·licitud està ben formada, però el servidor no pot processar la informació proporcionada (per exemple, si el nom d'usuari té un format invàlid):
 {
   "status": "error",
-  "message": "Format de 'username' invàlid. Si us plau, revisa el teu input."
+  "message": "Format de 'username' invàlid. 
+  Si us plau, revisa el teu input."
 }
 
 ### 7. 500 Internal Server Error - S'ha produït un error intern al servidor:
