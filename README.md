@@ -17,8 +17,18 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 | :---        |  :---        |  :---        |  :---         |  :---     |
 | Servei que consulta un User per Username  | http://192.168.144.158:10050/tapatapp/getUser |GET | application/json |  username (string) |
   
-  - Resposta:
+  - Còdigos de Resposta HTTP:
     
-    Code 200 Ok: {id=1,"username":"dani", "password":"montes", "email":"danimontes@gmail.com"}
+1. Code 200 Ok: {
+  "status": "success",
+  "data": {
+    "username": "usuari1",
+    "firstName": "Nom",
+    "lastName": "Cognom",
+    "email": "usuari1@example.com",
+    "phone": "123456789",
+    "address": "Carrer Exemple, 123"
+  }
+}
 
-    Code 400 No trobat: {"error": "No trobat"}
+2. Code 400 No trobat: {"error": "No trobat"}
