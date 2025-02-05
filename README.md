@@ -75,7 +75,7 @@ http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
 - Contacta con nosotros: Consultar al equipo de soporte técnico especificando las dudas, que contiene un formulario en el que debe poner su correo y el problema.
 - Registro: El usuario debe registrarse con un correo electrónico válido y una contraseña que incluya letras y números.
 - Login: Se hará mediante email y contraseña.
-- - He olvidado mi contraseña: El usuario si no recuerda su contraseña, podrá recuperarla poniendo el correo con el que se registró. Se le enviará un enlace para cambiar la contraseña.
+  - He olvidado mi contraseña: El usuario si no recuerda su contraseña, podrá recuperarla poniendo el correo con el que se registró. Se le enviará un enlace para cambiar la contraseña.
 
 ### Pantalla principal
 
