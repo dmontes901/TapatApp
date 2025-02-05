@@ -80,8 +80,8 @@ http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
 ### Pantalla principal
 
 - Niños a cargo: Listado de niños bajo el cuidado del usuario.
-- - Horas activas del pegat: Muestra la información del pegat sobre el niño/a a cargo (horas puesto, horas a retirar/colocar).
+  - Horas activas del pegat: Muestra la información del pegat sobre el niño/a a cargo (horas puesto, horas a retirar/colocar).
 - Configuración: El usuario puede modificar la configuración dentro de la app.
-- - Editar perfil: Modificar sus datos personales, añadir información o el apartado personal.
-- - Configuraciones generales: Personalizar el aspecto de la aplicación (diseño de interfaz, modo oscuro, tamaño de texto).
+  - Editar perfil: Modificar sus datos personales, añadir información o el apartado personal.
+  - Configuraciones generales: Personalizar el aspecto de la aplicación (diseño de interfaz, modo oscuro, tamaño de texto).
 - Cerrar sesión: Confirmar el cierre de sesión.
