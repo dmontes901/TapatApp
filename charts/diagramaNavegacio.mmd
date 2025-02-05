@@ -1,32 +1,20 @@
 flowchart TD;
     %% Inicio
-    A["Pantalla de Inicio"] -->|Iniciar Sesión| B["Pantalla de Login"];
-    A -->|Registrarse| C["Pantalla de Registro"];
-    A -->|Recuperar Contraseña| D["Pantalla de Recuperación"];
+    A["Pantalla de Inicio"] -->|Iniciar Sesión| B["Login"];
+    A -->|Registrarse| C["Registro"];
+    A -->|Olvidé mi contraseña| D["Recuperar Contraseña"];
 
     %% Inicio de Sesión
-    B -->|Credenciales Correctas| E["Dashboard"];
-    B -->|Credenciales Incorrectas| B1["Error: Credenciales Incorrectas"] --> B;
-    B -->|Olvidé mi contraseña| D;
+    B -->|Login Exitoso| E["Dashboard"];
+    B -->|Error| B1["Intentar de nuevo"] --> B;
 
     %% Registro
-    C -->|Datos Válidos| C1["Verificación de Email"];
-    C1 -->|Código Correcto| E;
-    C1 -->|Código Incorrecto| C2["Error: Código Inválido"] --> C1;
-    C -->|Datos Inválidos| C3["Error: Datos Incorrectos"] --> C;
+    C -->|Registro Exitoso| E;
+    C -->|Error| C1["Intentar de nuevo"] --> C;
 
     %% Recuperación de Contraseña
-    D -->|Ingresar Email| D1["Enviar Código"];
-    D1 -->|Código Enviado| D2["Ingresar Código"];
-    D2 -->|Código Correcto| D3["Crear Nueva Contraseña"];
-    D3 -->|Contraseña Guardada| B;
-    D2 -->|Código Incorrecto| D4["Error: Código Inválido"] --> D2;
+    D -->|Email Válido| D1["Ingresar Nueva Contraseña"] --> B;
+    D -->|Error| D2["Intentar de nuevo"] --> D;
 
-    %% Navegación en la App
-    E -->|Perfil| F["Pantalla de Perfil"];
-    E -->|Configuración| G["Pantalla de Configuración"];
+    %% Navegación
     E -->|Cerrar Sesión| A;
-
-    %% Retornos
-    F --> E;
-    G --> E;
