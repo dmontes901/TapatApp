@@ -3,12 +3,10 @@ flowchart TD;
     B -->|Registrar usuari| C["Registre"];
     B -->|Credencials correctes| D["Login OK "];
     
-    %% Continuación después del login exitoso
     D --> E["Dashboard"];
     E -->|Perfil| F["Pantalla de Perfil"];
     E -->|Configuració| G["Pantalla de Configuració"];
     
-    %% Flujo de recuperación de contraseña
     B -->|He oblidat la contrasenya| H["Recuperar Contrasenya"];
     H -->|Email vàlid| I["Ingresar nova contrasenya"] --> B;
     H -->|Error| H1["Intentar de nou"] --> H;
