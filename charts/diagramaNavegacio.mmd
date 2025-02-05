@@ -1,7 +1,9 @@
 flowchart TD;
     A["Inici - Benvinguda"] --> B["Login"];
     B -->|Registrar usuari| C["Registre"];
+    C --> E["Pantalla principal"];
     B -->|Credencials correctes| D["Login OK "];
+
     
     D --> E["Pantalla principal"];
     E -->|Perfil| F["Pantalla de Perfil"];
