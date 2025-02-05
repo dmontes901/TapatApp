@@ -15,7 +15,7 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 
 | Descripció  | End-point     | Method     |Tipus de petició|Parametres|
 | :---        |  :---        |  :---        |  :---         |  :---     |
-| Servei que consulta un User per Username  | http://192.168.144.158:5000/tapatapp/getUser |GET | application/json |  username |
+| Servei que consulta un User per Username  | http://192.168.144.158:5000//tapatapp/getUser |GET | application/json |  username |
   
   - Còdigos de Resposta HTTP:
     
@@ -66,4 +66,4 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
   "message": "Error intern al servidor. Si us plau, torni-ho a provar més tard."
 }
 # URL per provar totes les possibles sortides:
-http://192.168.144.158:10050/tapatapp/getUser?username=usuari1
+http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
