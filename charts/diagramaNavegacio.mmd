@@ -1,11 +1,13 @@
 flowchart TD;
     A["Inici - Benvinguda"] --> B["Login"];
     B -->|Registrar usuari| C["Registre"];
+    C -->["Registre"] D["Login OK "]
     B -->|Credencials correctes| D["Login OK "];
     
-    D --> E["Dashboard"];
+    D --> E["Pantalla principal"];
     E -->|Perfil| F["Pantalla de Perfil"];
     E -->|Configuració| G["Pantalla de Configuració"];
+    E -->|Lista|I["Lista de nens"];
     
     B -->|He oblidat la contrasenya| H["Recuperar Contrasenya"];
     H -->|Email vàlid| I["Ingresar nova contrasenya"] --> B;
