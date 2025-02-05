@@ -1,20 +1,20 @@
 flowchart TD;
     %% Inicio
-    A["Pantalla de Inicio"] -->|Iniciar Sesión| B["Login"];
-    A -->|Registrarse| C["Registro"];
-    A -->|Olvidé mi contraseña| D["Recuperar Contraseña"];
+    A["🏠 Pantalla de Inicio"] -->|🔑 Iniciar Sesión| B["🔐 Login"];
+    A -->|📝 Registrarse| C["🆕 Registro"];
+    A -->|❓ Olvidé mi contraseña| D["🔄 Recuperar Contraseña"];
 
     %% Inicio de Sesión
-    B -->|Login Exitoso| E["Dashboard"];
-    B -->|Error| B1["Intentar de nuevo"] --> B;
+    B -->|✅ Login Exitoso| E["📊 Dashboard"];
+    B -->|❌ Error| B1["↺ Intentar de nuevo"] --> B;
 
     %% Registro
-    C -->|Registro Exitoso| E;
-    C -->|Error| C1["Intentar de nuevo"] --> C;
+    C -->|✅ Registro Exitoso| E;
+    C -->|❌ Error| C1["↺ Intentar de nuevo"] --> C;
 
     %% Recuperación de Contraseña
-    D -->|Email Válido| D1["Ingresar Nueva Contraseña"] --> B;
-    D -->|Error| D2["Intentar de nuevo"] --> D;
+    D -->|✉️ Email Válido| D1["🔑 Ingresar Nueva Contraseña"] --> B;
+    D -->|❌ Error| D2["↺ Intentar de nuevo"] --> D;
 
     %% Navegación
-    E -->|Cerrar Sesión| A;
+    E -->|🚪 Cerrar Sesión| A;
