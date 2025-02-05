@@ -10,12 +10,12 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 - [HTTP REQUEST](HTTPRequest.md)
 - [HTTP RESPONSE](HTTPResponse.md)
 
-# Definició dels EndPoints del Servei Web:
+# Definición de los EndPoints del Servicio Web:
   - HOST: 192.168.144.158:5000
 
-| Descripció  | End-point     | Method     |Tipus de petició|Parametres|
+| Descripción  | End-point     | Method     |Tipus de petició|Parametres|
 | :---        |  :---        |  :---        |  :---         |  :---     |
-| Servei que consulta un User per Username  | http://192.168.144.158:5000//tapatapp/getUser |GET | application/json |  username |
+| Servicio que consulta un User por Username  | http://192.168.144.158:5000//tapatapp/getUser |GET | application/json |  username |
   
   - Còdigos de Resposta HTTP:
     
@@ -65,7 +65,7 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
   "status": "error",
   "message": "Error intern al servidor. Si us plau, torni-ho a provar més tard."
 }
-# URL per provar totes les possibles sortides:
+# URL para probar las posibles salidas:
 http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
 
 ## Datos de entrada del usuario
