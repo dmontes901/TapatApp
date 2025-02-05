@@ -1,20 +1,15 @@
 flowchart TD;
-    %% Inicio
-    A["🏠 Pantalla de Inicio"] -->|🔑 Iniciar Sesión| B["🔐 Login"];
-    A -->|📝 Registrarse| C["🆕 Registro"];
-    A -->|❓ Olvidé mi contraseña| D["🔄 Recuperar Contraseña"];
-
-    %% Inicio de Sesión
-    B -->|✅ Login Exitoso| E["📊 Dashboard"];
-    B -->|❌ Error| B1["↺ Intentar de nuevo"] --> B;
-
-    %% Registro
-    C -->|✅ Registro Exitoso| E;
-    C -->|❌ Error| C1["↺ Intentar de nuevo"] --> C;
-
-    %% Recuperación de Contraseña
-    D -->|✉️ Email Válido| D1["🔑 Ingresar Nueva Contraseña"] --> B;
-    D -->|❌ Error| D2["↺ Intentar de nuevo"] --> D;
-
-    %% Navegación
-    E -->|🚪 Cerrar Sesión| A;
+    A["Inici - Benvinguda"] --> B["Login"];
+    B -->|Credencials incorrectes| C["Registre"];
+    B -->|Credencials correctes| D["Login OK ✅"];
+    
+    %% Continuación después del login exitoso
+    D --> E["Dashboard"];
+    E -->|Perfil| F["Pantalla de Perfil"];
+    E -->|Configuració| G["Pantalla de Configuració"];
+    E -->|Tancar sessió| A;
+    
+    %% Flujo de recuperación de contraseña
+    B -->|He oblidat la contrasenya| H["Recuperar Contrasenya"];
+    H -->|Email vàlid| I["Ingresar nova contrasenya"] --> B;
+    H -->|Error| H1["Intentar de nou"] --> H;
