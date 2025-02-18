@@ -85,3 +85,6 @@ http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
   - Editar perfil: Modificar sus datos personales, añadir información o el apartado personal.
   - Configuraciones generales: Personalizar el aspecto de la aplicación (diseño de interfaz, modo oscuro, tamaño de texto).
 - Cerrar sesión: Confirmar el cierre de sesión.
+
+## Interfaz TapatApp
+- [Interfaz](HTTPRequest.md)
