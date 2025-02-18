@@ -87,4 +87,4 @@ http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
 - Cerrar sesión: Confirmar el cierre de sesión.
 
 ## Interfaz TapatApp
-- [Interfaz](HTTPRequest.md)
+- [Interfaz](InterfazTapatApp.mmd)
