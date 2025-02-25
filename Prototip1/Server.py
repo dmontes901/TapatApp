@@ -1,63 +1,53 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 
-# Clase User que representa un usuario en memoria
+app = Flask(__name__)
+
 class User:
     def __init__(self, id, username, password, email):
         self.id = id
         self.username = username
         self.password = password
         self.email = email
+    
+    def __str__(self):
+        print(self.username+":"+self.password+":"+self.email)
 
-    def to_dict(self):
-        """ Devuelve un diccionario sin la contraseña. """
-        return {"id": self.id, "username": self.username, "email": self.email}
-
-# Lista de usuarios (simula una base de datos)
-listUsers = [
-    User(id=1, username="usuari1", password="12345", email="usuari1@gmail.com"),
-    User(id=2, username="usuari2", password="123", email="usuari2@gmail.com"),
-    User(id=3, username="usuari3", password="00", email="Miscos@gmail.com")
+users = [
+    User(id=1, username="mare", password="mare", email="prova@gmail.com"),
+    User(id=2, username="pare", password="pare", email="prova2@gmail.com")
 ]
 
-# DAO para gestionar usuarios
-class DAOUsers:
+class UserDAO:
     def __init__(self):
-        self.users = listUsers
+        self.users = users
+
+    def get_all_users(self):
+        result = []
+        for user in self.users:
+            result.append(user.__dict__)
+        return result
 
     def get_user_by_username(self, username):
-        """ Devuelve el usuario si existe, None si no. """
-        for u in self.users:
-            if u.username == username:
-                return u
+        for user in self.users:
+            if user.username == username:
+                return user.__dict__
         return None
 
-# Instancia de DAO
-daousers = DAOUsers()
+user_dao = UserDAO()
 
-# Crear aplicación Flask
-app = Flask(__name__)
+@app.route('/prototip1/users', methods=['GET'])
+def get_users():
+    return jsonify(user_dao.get_all_users())
 
-@app.route('/tapatapp/getUser', methods=['GET'])
-def get_user():
-    username = request.args.get('name')  # Obtener parámetro de la URL
-
-    if not username:
-        return jsonify({"error": "Falta el parámetro 'name'"}), 400
-
-    user = daousers.get_user_by_username(username)
+@app.route('/prototip1/getuser', methods=['GET'])
+def get_user_by_username():
+    username=request.args.get('username', default="", type=str)
+    print("+"+username+"+")
+    user = user_dao.get_user_by_username(username)
     if user:
-        return jsonify(user.to_dict()), 200
+        return jsonify(user)
     else:
-        return jsonify({"error": "Usuario no encontrado"}), 404
+        return jsonify({"error": f"User with username {username} not found"}), 404
 
-@app.route('/prototip/getuser/<string:username>', methods=['GET'])
-def prototip_get_user(username):
-    user = daousers.get_user_by_username(username)
-    if user:
-        return jsonify(user.to_dict()), 200
-    else:
-        return jsonify({"error": "Usuario no encontrado"}), 404
-
-# Ejecutar el servidor en modo debug
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(host='0.0.0.0', port=10050, debug=True)
