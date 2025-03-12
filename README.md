@@ -8,6 +8,12 @@
 - [HTTP REQUEST](HTTPRequest.md)
 - [HTTP RESPONSE](HTTPResponse.md)
 
+## Prototip 1:
+
+
+## Prototip 2:
+
+
 # Definición de los EndPoints del Servicio Web:
   - HOST: 192.168.144.158:5000
 
@@ -65,8 +71,3 @@
 }
 # URL para probar las posibles salidas:
 http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
-
-## Prototip 1:
-
-
-## Prototip 2:
