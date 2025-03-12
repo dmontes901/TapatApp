@@ -9,7 +9,7 @@
 - [HTTP RESPONSE](HTTPResponse.md)
 
 ## Prototip 1:
-
+[Diagrama Prototip 1](charts/diagramaPrototip1.mmd)
 
 ## Prototip 2:
 
