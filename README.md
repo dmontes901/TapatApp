@@ -1,7 +1,5 @@
 # Mi Proyecto
 
-Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos y requisitos:
-
 - [Descripción del Proyecto](descripcion.md)
 - [Requisitos Técnicos](requisitos.md)
 
@@ -68,3 +66,7 @@ Bienvenido a mi proyecto. A continuación, encontrarás enlaces a los documentos
 # URL para probar las posibles salidas:
 http://192.168.144.158:5000//tapatapp/getUser?name=usuari1
 
+## Prototip 1:
+
+
+## Prototip 2:
