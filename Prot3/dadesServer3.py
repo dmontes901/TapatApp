@@ -38,6 +38,9 @@ children = [
     Child(id=3, child_name="Alex Montes", sleep_average=6, treatment_id=1, time=5)
 ]
 
+# Diccionario para almacenar tokens activos
+active_tokens = {}
+
 # ---- DAO Classes ----
 class DAO_User:
     def __init__(self):
@@ -50,8 +53,13 @@ class DAO_User:
         return None
 
     def generate_token(self, username):
+        if username in active_tokens:
+            return active_tokens[username]  # Devuelve el token existente
+        
         salt = uuid.uuid4().hex
-        return hashlib.sha256((username + salt).encode()).hexdigest()
+        token = hashlib.sha256((username + salt).encode()).hexdigest()
+        active_tokens[username] = token  # Guarda el token en el diccionario
+        return token
 
 class DAO_Child:
     def __init__(self):
