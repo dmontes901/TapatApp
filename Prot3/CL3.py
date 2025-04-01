@@ -54,11 +54,11 @@ class LoginApp:
     def create_main_screen(self, user_data, children):
         self.clear_screen()
         
-        tk.Label(self.root, text=f"Welcome, {user_data['username']}!", font=("Arial", 14)).pack()
+        tk.Label(self.root, text=f"Bienvenido, {user_data['username']}!", font=("Calibri", 14)).pack()
         tk.Label(self.root, text=f"Email: {user_data['email']}").pack()
         tk.Label(self.root, text=f"Token: {user_data['token']}").pack()
         
-        tk.Label(self.root, text="Children Info:", font=("Arial", 12)).pack()
+        tk.Label(self.root, text="Children Info:", font=("Calibri", 12)).pack()
         
         if children:
             for child in children:
