@@ -1,36 +1,22 @@
 import requests
+import tkinter as tk
+from tkinter import messagebox
 
 class DAOUser:
+    token_cache = {}
+    
     @staticmethod
     def getUserByCredentials(username, password):
+        if username in DAOUser.token_cache:
+            return DAOUser.token_cache[username]
+        
         response = requests.post("http://localhost:10050/prototip2/login", json={"username": username, "password": password})
 
         if response.status_code == 200:
             userData = response.json()
-            return userData  # Devuelve un diccionario con ID, username, email y token
+            DAOUser.token_cache[username] = userData
+            return userData
         else:
-            return None
-
-class LoginView: 
-    @staticmethod
-    def getCredentials():
-        username = input("Introduce tu username: ")
-        password = input("Introduce tu password: ")
-        return username, password
-
-    @staticmethod
-    def showUserInfo(username, password):
-        user = DAOUser.getUserByCredentials(username, password)
-        if user:
-            print("\n✅ Inicio de sesión correcto!")
-            print(" --- User Info --- ")
-            print(f"ID: {user['id']}")
-            print(f"Username: {user['username']}")
-            print(f"Email: {user['email']}")
-            print(f"Token: {user['token']}\n")
-            return user
-        else:
-            print("❌ ERROR: Credenciales incorrectas\n")
             return None
 
 class DAOChild:
@@ -44,28 +30,67 @@ class DAOChild:
         else:
             return None
 
-class ChildrenView:
-    @staticmethod
-    def showChildInfo(user_id, token):
-        children = DAOChild.getChildren(user_id, token)
+class LoginApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Login App")
+        self.root.geometry("400x300")
+        
+        self.create_login_screen()
+    
+    def create_login_screen(self):
+        self.clear_screen()
+        
+        tk.Label(self.root, text="Username:").pack()
+        self.username_entry = tk.Entry(self.root)
+        self.username_entry.pack()
+        
+        tk.Label(self.root, text="Password:").pack()
+        self.password_entry = tk.Entry(self.root, show="*")
+        self.password_entry.pack()
+        
+        tk.Button(self.root, text="Login", command=self.login).pack()
+    
+    def create_main_screen(self, user_data, children):
+        self.clear_screen()
+        
+        tk.Label(self.root, text=f"Welcome, {user_data['username']}!", font=("Arial", 14)).pack()
+        tk.Label(self.root, text=f"Email: {user_data['email']}").pack()
+        tk.Label(self.root, text=f"Token: {user_data['token']}").pack()
+        
+        tk.Label(self.root, text="Children Info:", font=("Arial", 12)).pack()
+        
         if children:
-            print("\n👶 --- Children Info --- ")
             for child in children:
-                print(f"ID: {child['id']}")
-                print(f"Nombre: {child['child_name']}")
-                print(f"Promedio de sueño: {child['sleep_average']} horas")
-                print()
+                tk.Label(self.root, text=f"ID: {child['id']}, Name: {child['child_name']}, Sleep Avg: {child['sleep_average']}").pack()
         else:
-            print("❌ ERROR: No hay niños asociados a este usuario.\n")
+            tk.Label(self.root, text="No children associated.").pack()
+        
+        tk.Button(self.root, text="Logout", command=self.create_login_screen).pack()
+    
+    def login(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+        
+        response = requests.post("http://localhost:10050/prototip2/login", json={"username": username, "password": password})
+        
+        if response.status_code == 200:
+            user_data = response.json()
+            token = user_data['token']
+            
+            headers = {"Authorization": f"Bearer {token}"}
+            children_response = requests.get(f"http://localhost:10050/prototip2/children/{user_data['id']}", headers=headers)
+            
+            children = children_response.json() if children_response.status_code == 200 else []
+            self.create_main_screen(user_data, children)
+        else:
+            messagebox.showerror("Error", "Invalid credentials")
+    
+    def clear_screen(self):
+        for widget in self.root.winfo_children():
+            widget.destroy()
 
-# ---- MAIN ----
 if __name__ == "__main__":
-    username, password = LoginView.getCredentials()
-    user = LoginView.showUserInfo(username, password)
-
-    if user:
-        user_id = user["id"]
-        token = user["token"]
-        ChildrenView.showChildInfo(user_id, token)
-    else:
-        exit()
+    root = tk.Tk()
+    app = LoginApp(root)
+    root.mainloop()
