@@ -1,4 +1,3 @@
-# Clase User
 class User:
     def __init__(self, id, username, password, email):
         self.id = id
@@ -11,11 +10,9 @@ class User:
     
 
 users = [
-    User(id=1, username="mare", password="12345", email="prova@gmail.com"),
-    User(id=2, username="pare", password="123", email="prova2@gmail.com")
+    User(id=1, username="madre", password="01", email="madre@gmail.com"),
+    User(id=2, username="padre", password="02", email="padre@gmail.com")
 ]
-
-# Crear les classes Child, Tap, Role, Status i Treatment
 
 class Child: 
     def __init__(self, id, child_name, sleep_average, treatment_id, time):
@@ -29,9 +26,9 @@ class Child:
         return self.id + ":" + self.child_name + ":" + self.sleep_average + ":" + self.treatment_id + ":" + self.time
 
 children = [
-    Child(id=1, child_name="Carol Child", sleep_average=8, treatment_id=1, time=6),
-    Child(id=2, child_name="Jaco Child", sleep_average=10, treatment_id=2, time=6),
-    Child(id=3, child_name="Carol Child 2", sleep_average=6, treatment_id=1, time=5)
+    Child(id=1, child_name="Raul Cuesta", sleep_average=8, treatment_id=1, time=6),
+    Child(id=2, child_name="Ainara Ulchur", sleep_average=10, treatment_id=2, time=6),
+    Child(id=3, child_name="Marcos Gracia", sleep_average=6, treatment_id=1, time=5)
 ]
 
 class Tap:
@@ -47,8 +44,8 @@ class Tap:
         return self.id + ":" + self.child_id + ":" + self.status_id + ":" + self.user_id + ":" + self.init + ":" + self.end
         
 taps = [
-    Tap(id=1, child_id=1, status_id=1, user_id=1, init="2024-12-18T19:42:43", end="2024-12-18T20:42:43"),
-    Tap(id=2, child_id=3, status_id=2, user_id=2, init="2024-12-18T21:42:43", end="2024-12-18T22:42:43")
+    Tap(id=1, child_id=1, status_id=1, user_id=1, init="2024-12-12 T09:42:10", end="2024-12-18 T20:42:10"),
+    Tap(id=2, child_id=3, status_id=2, user_id=2, init="2024-12-5 T10:42:13", end="2024-12-16 T21:42:13")
 ]
 
 relation_user_child = [
