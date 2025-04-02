@@ -13,11 +13,10 @@ Els **tests unitaris** serveixen per verificar les unitats individuals de codi e
 
 ```python
 import unittest
-from calculadora import suma
 
 class TestCalculadora(unittest.TestCase):
     def test_suma(self):
-        resultat = suma(2, 3)
+        resultat = (2 + 3)
         self.assertEqual(resultat, 5)
 
 if __name__ == '__main__':
@@ -65,7 +64,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-#### Mètodes comuns d'assertions:
+#### Mètodes més importants d'assertions:
 
 - `assertEqual(a, b)`: Verifica que `a == b`.
 - `assertNotEqual(a, b)`: Verifica que `a != b`.
@@ -77,5 +76,3 @@ if __name__ == '__main__':
 - És una biblioteca estàndard, no cal instal·lar res addicional.
 - Suporta configuració i neteja amb els mètodes `setUp` i `tearDown`.
 - Compatible amb altres eines i frameworks de testing.
-
-Amb aquests conceptes, pots començar a escriure tests unitaris robustos per al teu codi en Python.
