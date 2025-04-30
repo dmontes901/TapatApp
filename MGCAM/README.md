@@ -30,10 +30,13 @@ Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas s
 
 - Tests: unittest (validar la funcionalidad del codigo)
 
-# Modelo E/R
+## Modelo E/R
 
 ![image](https://github.com/user-attachments/assets/08b09712-ac63-47d3-8a7c-5863d0c34d0d)
 
+## Diagrama de arquitectura
+
+![image](https://github.com/user-attachments/assets/5fbce81d-b65b-4aa4-a21b-0b4a8b30139d)
 
 # 🔌 End-points WebService
 
