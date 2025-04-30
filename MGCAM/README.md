@@ -15,4 +15,20 @@ Este proyecto es una aplicación desarrollada en Python que permite la gestión 
 ## 💡 Objetivo
 Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas según el perfil del usuario, ideal como base para sistemas de gestión de contenido, portafolios privados o dashboards con contenido multimedia restringido.
 
+#⚙️ Requisitos Técnicos
+- Lenguaje: Python 3.x
+
+- Base de datos: MySQL
+
+- Backend: Flask (ideal peara aplicaciones web y gestión de sesiones)
+
+- Frontend: Wireframes básicos
+
+- Entorno de desarrollo: Visual Studio Code
+
+- Control de versiones: Git + GitHub
+
+- Tests: unittest (validar la funcionalidad del codigo)
+
+
 ### Creado por Daniel Montes y Jose Gomez - 2025
