@@ -15,7 +15,7 @@ Este proyecto es una aplicación desarrollada en Python que permite la gestión 
 ## 💡 Objetivo
 Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas según el perfil del usuario, ideal como base para sistemas de gestión de contenido, portafolios privados o dashboards con contenido multimedia restringido.
 
-#⚙️ Requisitos Técnicos
+# ⚙️ Requisitos Técnicos
 - Lenguaje: Python 3.x
 
 - Base de datos: MySQL
