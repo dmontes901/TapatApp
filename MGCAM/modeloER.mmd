@@ -1,0 +1,14 @@
+flowchart TD;
+    A["Inicio - Bienvenida"] --> B["Login"];
+    B -->|Registrar nuevo usuario| C["Registro"];
+    C --> E["Pantalla Principal"];
+    B -->|Credenciales correctas| D["Login OK"];
+    D --> E["Pantalla Principal"];
+    E -->|Ver Imágenes| F["Galería de Imágenes"];
+    E -->|Configuración| G["Pantalla de Configuración"];
+    E -->|Perfil| H["Pantalla de Perfil"];
+    H -->|Editar datos| I["Editar Perfil"];
+    E -->|Cerrar sesión| Z["Logout"] --> A;
+    B -->|Olvidé mi contraseña| J["Recuperar Contraseña"];
+    J -->|Email válido| K["Ingresar nueva contraseña"] --> B;
+    J -->|Error| L["Intentar de nuevo"] --> J;
