@@ -1,0 +1,18 @@
+[Usuario]
++ id_usuario (PK)
++ nombre_usuario
++ contrasena_md5
++ rol
+
+      |
+      | 1
+      |
+      |———
+           \ N
+           |
+     [Imagen]
+     + id_imagen (PK)
+     + ruta_imagen
+     + titulo
+     + descripcion
+     + id_usuario (FK)
