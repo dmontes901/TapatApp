@@ -30,6 +30,36 @@ Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas s
 
 - Tests: unittest (validar la funcionalidad del codigo)
 
+# Modelo E/R
+
+erDiagram
+    USUARIO ||--o{ IMAGEN : gestiona
+    USUARIO ||--o{ SESION : realiza
+    IMAGEN ||--o{ RUTA : contiene
+    USUARIO {
+        int id_usuario PK
+        string nombre_usuario
+        string email
+        string contrasena_md5
+        string telefono
+        enum rol "Admin | User"
+    }
+    IMAGEN {
+        int id_imagen PK
+        string ruta_imagen
+        string descripcion
+        string titulo
+        date fecha_subida
+        int id_usuario FK
+    }
+    SESION {
+        int id_sesion PK
+        int id_usuario FK
+        date fecha_inicio
+        date fecha_fin
+        enum estado "Activa | Cerrada"
+    }
+
 # 🔌 End-points WebService
 
 | **Método** | **Endpoint**       | **Función**                                                   |
