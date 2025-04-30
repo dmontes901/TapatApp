@@ -50,5 +50,9 @@ Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas s
 | `PUT`      | `/perfil`          | Permite modificar los datos del perfil del usuario.           |
 | `POST`     | `/logout`          | Cierra la sesión del usuario actual.                          |
 
+## Diagrama de clases BackEnd
+
+![image](https://github.com/user-attachments/assets/0414979f-b52f-47a8-bf16-11d8c52ce316)
+
 
 ### Creado por Daniel Montes y Jose Gomez - 2025
