@@ -30,5 +30,17 @@ Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas s
 
 - Tests: unittest (validar la funcionalidad del codigo)
 
+# End-points WebService
+
+| **Método** | **Endpoint**       | **Función**                                                   |
+|------------|--------------------|----------------------------------------------------------------|
+| `POST`     | `/login`           | Inicia sesión de usuario con nombre de usuario y contraseña (MD5). |
+| `POST`     | `/register`        | Registra un nuevo usuario en la base de datos.                |
+| `GET`      | `/imagenes`        | Lista imágenes visibles según el usuario autenticado.         |
+| `POST`     | `/imagenes`        | Sube una nueva imagen (requiere permisos especiales, ej. admin). |
+| `GET`      | `/perfil`          | Devuelve la información del perfil del usuario actual.        |
+| `PUT`      | `/perfil`          | Permite modificar los datos del perfil del usuario.           |
+| `POST`     | `/logout`          | Cierra la sesión del usuario actual.                          |
+
 
 ### Creado por Daniel Montes y Jose Gomez - 2025
