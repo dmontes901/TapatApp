@@ -30,7 +30,7 @@ Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas s
 
 - Tests: unittest (validar la funcionalidad del codigo)
 
-# End-points WebService
+# 🔌 End-points WebService
 
 | **Método** | **Endpoint**       | **Función**                                                   |
 |------------|--------------------|----------------------------------------------------------------|
