@@ -1,18 +1,14 @@
-[Usuario]
-+ id_usuario (PK)
-+ nombre_usuario
-+ contrasena_md5
-+ rol
+USUARIO {
+    INT id_usuario PK
+    VARCHAR nombre_usuario
+    VARCHAR contrasena_md5
+    VARCHAR rol
+}
 
-      |
-      | 1
-      |
-      |———
-           \ N
-           |
-     [Imagen]
-     + id_imagen (PK)
-     + ruta_imagen
-     + titulo
-     + descripcion
-     + id_usuario (FK)
+IMAGEN {
+    INT id_imagen PK
+    VARCHAR ruta_imagen
+    VARCHAR titulo
+    TEXT descripcion
+    INT id_usuario FK
+}
