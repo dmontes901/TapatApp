@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     subgraph Cliente
         A[🧑‍💻 Navegador Web]
@@ -22,3 +23,4 @@ flowchart LR
     C --> E
     E -->|Consultar imágenes según usuario| F
     F --> G
+```
