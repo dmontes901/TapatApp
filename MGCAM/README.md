@@ -14,3 +14,5 @@ Este proyecto es una aplicación desarrollada en Python que permite la gestión 
 
 ## 💡 Objetivo
 Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas según el perfil del usuario, ideal como base para sistemas de gestión de contenido, portafolios privados o dashboards con contenido multimedia restringido.
+
+### Creado por Daniel Montes y Jose Gomez - 2025
