@@ -41,22 +41,23 @@
 </head>
 <body>
 
-    <h2>Bienvenido, {{ username }}</h2>
+    <h2>Bienvenido, {{ usuario.nombre }}</h2>
 
     {% if imagenes %}
         <div class="galeria">
-            {% for imagen in imagenes %}
+            {% for imagenes in imagenes %}
                 <div class="imagen-item">
-                    <h4>{{ imagen.titulo }}</h4>
-                    <img src="{{ url_for('static', filename=imagen.ruta_imagen) }}" alt="{{ imagen.descripcion }}">
-                    <p>{{ imagen.descripcion }}</p>
-                    <small>{{ imagen.fecha_subida }}</small>
+                    <h4>{{ imagenes.titulo }}</h4>
+                    <img src="{{ url_for('static', filename=imagenes.ruta_imagen) }}">
+                    <p>{{ imagenes.descripcion }}</p>
+                    <small>{{ imagenes.fecha_subida }}</small>
                 </div>
             {% endfor %}
         </div>
     {% else %}
         <p>No hay imágenes disponibles para este usuario.</p>
     {% endif %}
+
     <a href="{{ url_for('logout') }}">Cerrar sesión</a>
 </body>
 </html>

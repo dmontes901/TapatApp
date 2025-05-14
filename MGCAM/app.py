@@ -4,7 +4,7 @@ import mysql.connector
 from config import DB_CONFIG
 
 app = Flask(__name__)
-app.secret_key = 'clave_secreta'
+app.secret_key = 'root'
 
 # Conexión a MySQL
 def get_db_connection():
@@ -24,7 +24,7 @@ def login():
 
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM usuarios WHERE nombre_usuario=%s AND contrasena_md5=%s", (usuario, password))
+        cursor.execute("SELECT * FROM usuarios WHERE nombre=%s AND password_md5=%s", (usuario, password))
         user = cursor.fetchone()
         conn.close()
 
@@ -43,7 +43,7 @@ def home():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
     
-    cursor.execute("SELECT id_usuario FROM usuarios WHERE nombre_usuario = %s", (session['username'],))
+    cursor.execute("SELECT id_usuario FROM usuarios WHERE nombre = %s", (session['username'],))
     user = cursor.fetchone()
 
     cursor.execute("SELECT * FROM imagenes WHERE id_usuario = %s", (user['id_usuario'],))
@@ -64,8 +64,8 @@ def register():
 
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO usuarios (nombre_usuario, contrasena_md5, email, rol) VALUES (%s, %s, %s, %s)", 
-                       (usuario, password, email, 'User'))
+        cursor.execute("INSERT INTO usuarios (nombre, password_md5, email) VALUES (%s, %s, %s)", 
+                       (usuario, password, email))
         conn.commit()
         conn.close()
 

@@ -16,19 +16,33 @@ Este proyecto es una aplicación desarrollada en Python que permite la gestión 
 Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas según el perfil del usuario, ideal como base para sistemas de gestión de contenido, portafolios privados o dashboards con contenido multimedia restringido.
 
 # ⚙️ Requisitos Técnicos
-- Lenguaje: Python 3.x
+## 🎨 Frontend
+### Wireframes/Interfaz:
 
-- Base de datos: MySQL
+- HTML5 + CSS3 básico (plantillas Jinja2 desde Flask)
 
-- Backend: Flask (ideal peara aplicaciones web y gestión de sesiones)
+- Estilo simple y responsive con CSS puro
 
-- Frontend: Wireframes básicos
+### Arquitectura de carpetas:
 
-- Entorno de desarrollo: Visual Studio Code
+- /templates → Archivos .html (renderizados por Flask)
 
-- Control de versiones: Git + GitHub
+- /static → Imágenes, CSS y otros recursos estáticos
 
-- Tests: unittest (validar la funcionalidad del codigo)
+### Ruta de imágenes:
+
+- Las imágenes se cargan desde static/uploads/
+
+- Se muestran dinámicamente en home.html según el usuario conectado
+
+### Navegación/Flujo:
+
+- Pantalla de login
+
+- Vista principal (home.html) tras inicio de sesión
+
+- Visualización de imágenes asociadas al usuario
+
 
 ## Modelo E/R
 
