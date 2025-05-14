@@ -43,6 +43,32 @@ Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas s
 
 - Visualización de imágenes asociadas al usuario
 
+## 🖥️ Backend
+### Lenguaje:
+
+- Python 3.x
+
+### Framework:
+
+- Flask (aplicacion ligera, manejo de rutas y gestión de sesiones)
+
+### Base de datos:
+
+- MySQL (almacenamiento estructurado de usuarios e imágenes)
+
+- Conexión mediante mysql-connector-python o similar
+
+### Control de versiones:
+
+- Git + GitHub (versionar el código y colaborar)
+
+### Testing:
+
+- unittest para validar la lógica del backend y endpoints
+
+### Seguridad:
+
+- Contraseñas encriptadas (con MD5)
 
 ## Modelo E/R
 
