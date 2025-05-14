@@ -75,17 +75,38 @@ def api_imagenes():
 def register():
     if request.method == 'POST':
         usuario = request.form['usuario']
-        password = hashlib.md5(request.form['password'].encode()).hexdigest()
-        email = request.form['email']
+        password = request.form['password']
+        nombre = request.form['nombre']  # Nuevo campo
 
+        # Validar que los campos no estén vacíos
+        if not usuario or not password or not nombre:
+            return render_template('register.html', error="Todos los campos son obligatorios.")
+
+        # Conexión a la base de datos
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO usuarios (nombre, password, email) VALUES (%s, %s, %s)",
-                       (usuario, password, email))
+
+        # Verificar si el usuario ya existe
+        cursor.execute("SELECT id FROM usuarios WHERE username = %s", (usuario,))
+        existing_user = cursor.fetchone()
+        if existing_user:
+            cursor.close()
+            conn.close()
+            return render_template('register.html', error="El usuario ya existe.")
+
+        # Hash de la contraseña con MD5
+        hashed_password = hashlib.md5(password.encode()).hexdigest()
+
+        # Insertar el nuevo usuario en la base de datos
+        cursor.execute("INSERT INTO usuarios (username, password, nombre) VALUES (%s, %s, %s)", (usuario, hashed_password, nombre))
         conn.commit()
+
+        cursor.close()
         conn.close()
 
+        # Redirigir al login después del registro exitoso
         return redirect(url_for('login'))
+
     return render_template('register.html')
 
 @app.route('/logout')
