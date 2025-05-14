@@ -37,27 +37,63 @@
         .imagen-item h4 {
             margin: 0.5rem 0;
         }
+
+        .logout {
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
 
-    <h2>Bienvenido, {{ usuario.nombre }}</h2>
+    <h2>Bienvenido, {{ usuario }}</h2>
 
-    {% if imagenes %}
-        <div class="galeria">
-            {% for imagenes in imagenes %}
-                <div class="imagen-item">
-                    <h4>{{ imagenes.titulo }}</h4>
-                    <img src="{{ url_for('static', filename=imagenes.ruta_imagen) }}">
-                    <p>{{ imagenes.descripcion }}</p>
-                    <small>{{ imagenes.fecha_subida }}</small>
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>No hay imágenes disponibles para este usuario.</p>
-    {% endif %}
+    <div class="galeria" id="galeria"></div>
 
-    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    <p id="mensaje"></p>
+
+    <div class="logout">
+        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    </div>
+
+    <script>
+        async function cargarImagenes() {
+            const galeria = document.getElementById("galeria");
+            const mensaje = document.getElementById("mensaje");
+            galeria.innerHTML = "";
+            mensaje.textContent = "";
+
+            try {
+                const res = await fetch("/api/imagenes");
+                const data = await res.json();
+
+                if (data.error) {
+                    mensaje.textContent = "Error: " + data.error;
+                    return;
+                }
+
+                if (data.length === 0) {
+                    mensaje.textContent = "No hay imágenes disponibles.";
+                    return;
+                }
+
+                data.forEach(imagen => {
+                    const div = document.createElement("div");
+                    div.className = "imagen-item";
+                    div.innerHTML = `
+                        <h4>${imagen.titulo}</h4>
+                        <img src="/static/${imagen.ruta_imagen}" alt="${imagen.descripcion}">
+                        <p>${imagen.descripcion}</p>
+                        <small>${imagen.fecha_subida}</small>
+                    `;
+                    galeria.appendChild(div);
+                });
+            } catch (err) {
+                console.error(err);
+                mensaje.textContent = "Error al cargar las imágenes.";
+            }
+        }
+
+        window.onload = cargarImagenes;
+    </script>
 </body>
 </html>
