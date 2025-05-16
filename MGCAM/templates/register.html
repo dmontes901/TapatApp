@@ -6,16 +6,20 @@
     <link rel="stylesheet" href="/static/style2.css">
 </head>
 <body>
-    <h2>Registro de Usuario</h2>
-<form method="POST" action="{{ url_for('register') }}">
-    <input type="text" name="nombre" placeholder="Nombre completo" required><br>
-    <input type="text" name="usuario" placeholder="Usuario" required><br>
-    <input type="password" name="password" placeholder="Contraseña" required><br>
-    <button type="submit">Registrarse</button>
-</form>
-    {% if error %}
-    <p style="color:red">{{ error }}</p>
-    {% endif %}
-    <a href="{{ url_for('login') }}">Volver al login</a>
+    <div class="login-container">
+        <h2>Registro de Usuario</h2>
+        <form method="POST" action="{{ url_for('register') }}" class="login-form">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+            {% if error %}
+            <p class="error-message">{{ error }}</p>
+            {% endif %}
+        </form>
+        <p class="register-link">
+            ¿Ya tienes una cuenta? <a href="{{ url_for('login') }}">Volver al login</a>
+        </p>
+    </div>
 </body>
 </html>

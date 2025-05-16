@@ -1,92 +1,85 @@
-/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
     color: #333;
-    line-height: 1.6;
 }
 
-h2 {
-    text-align: center;
-    margin-top: 1rem;
-    color: #444;
-}
-
-/* Gallery Styles */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
+.main-container {
+    padding: 40px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
-.imagen-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    padding: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.imagen-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.imagen-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-}
-
-.imagen-item h4 {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 0.5rem;
-}
-
-.imagen-item p {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-.imagen-item small {
-    font-size: 0.8rem;
-    color: #999;
-}
-
-/* Message Styles */
-#mensaje {
-    text-align: center;
-    font-size: 1rem;
-    color: #888;
-    margin-top: 1rem;
-}
-
-/* Logout Link */
-.logout {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.logout a {
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
     text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.logout a:hover {
-    background-color: #0056b3;
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.imagen-item {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.imagen-item:hover {
+    transform: scale(1.02);
+}
+
+.imagen-item img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.imagen-item h4 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.imagen-item p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.imagen-item small {
+    font-size: 12px;
+    color: #888;
+}
+
+.mensaje {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #e67e22;
+    text-align: center;
 }

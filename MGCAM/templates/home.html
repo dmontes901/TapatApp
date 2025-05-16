@@ -6,15 +6,14 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <div class="main-container">
+        <header class="header">
+            <h2>Bienvenido, {{ usuario }}</h2>
+            <a href="{{ url_for('logout') }}" class="logout-button">Cerrar sesión</a>
+        </header>
 
-    <h2>Bienvenido, {{ usuario }}</h2>
-
-    <div class="galeria" id="galeria"></div>
-
-    <p id="mensaje"></p>
-
-    <div class="logout">
-        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        <section class="galeria" id="galeria"></section>
+        <p id="mensaje" class="mensaje"></p>
     </div>
 
     <script>
