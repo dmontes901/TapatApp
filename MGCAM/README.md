@@ -105,5 +105,16 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 
 ![image](https://github.com/user-attachments/assets/0414979f-b52f-47a8-bf16-11d8c52ce316)
 
+### Login
+![image](https://github.com/user-attachments/assets/207fafb7-e5f4-4efa-8aaa-f5d2cbb6d90f)
+
+
+### Registro
+![image](https://github.com/user-attachments/assets/4f2d32bf-475d-4f03-a32c-e122fedab399)
+
+
+### Login completado
+![image](https://github.com/user-attachments/assets/72385626-74a1-4e47-9322-e00fb28905c3)
+
 
 ### Creado por Daniel Montes y Jose Gomez - 2025
