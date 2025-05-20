@@ -117,4 +117,9 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 ![image](https://github.com/user-attachments/assets/72385626-74a1-4e47-9322-e00fb28905c3)
 
 
+## Test Unitari
+[Codigo de test_app](test_app.py)
+
+![alt text](image.png)
+
 ### Creado por Daniel Montes y Jose Gomez - 2025
