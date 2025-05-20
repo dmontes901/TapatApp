@@ -1,0 +1,24 @@
+graph TD
+    %% Pantallas principales del front-end
+    Inicio["Página de Inicio"]
+    Login["Login de Usuario"]
+    Registro["Registro de Usuario"]
+    Home["Panel Principal (Home)"]
+    GestionUsuarios["Gestión de Usuarios (Admin)"]
+    GestionImagenes["Gestión de Imágenes (Admin)"]
+    Perfil["Perfil de Usuario"]
+
+    %% Relaciones entre pantallas
+    Inicio --> Login
+    Inicio --> Registro
+    Login --> Home
+    Registro --> Login
+    Home --> Perfil
+    Home --> GestionUsuarios
+    Home --> GestionImagenes
+
+    %% Relaciones con entidades de la base de datos
+    Home -->|Consulta| Imagen[(Tabla imagenes)]
+    Perfil -->|Consulta / Edita| Usuario[(Tabla usuarios)]
+    GestionImagenes -->|Consulta / Inserta / Elimina| Imagen
+    GestionUsuarios -->|Consulta / Inserta / Edita / Elimina| Usuario
