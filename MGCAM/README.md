@@ -3,22 +3,28 @@ Este proyecto es una aplicación desarrollada en Python que permite la gestión 
 
 ## 🛠️ Características principales
 - 🔐 Autenticación de usuarios: 
+
 El sistema implementa un mecanismo de autenticación basado en credenciales, donde los usuarios deben ingresar su nombre de usuario y contraseña para acceder a las funcionalidades protegidas. La contraseña se almacena utilizando una función hash (MD5 en este caso), mejorando así la seguridad frente a accesos no autorizados.
 
-- 👥 Soporte para múltiples roles de usuario (por ejemplo, user1, admin), con acceso diferenciado a contenidos.
+- 👥 Registro de Nuevos Usuarios: 
 
-- 🖼️ Visualización de imágenes según el usuario autenticado.
+La aplicación permite el alta de nuevos usuarios a través de un formulario que recoge nombre completo, nombre de usuario y contraseña. Durante este proceso, se valida la información proporcionada y se almacena de forma segura en la base de datos.
 
-- 📂 Navegación intuitiva mediante una barra de navegación integrada.
+- 🖼️ Visualización de imágenes según el usuario autenticado:
 
-- 🗄️ Base de datos MySQL para almacenar la información de usuarios y rutas de imágenes.
+Una vez autenticado, el usuario puede visualizar las imágenes asociadas a su cuenta. Cada imagen contiene información relevante como título, descripción, ruta de almacenamiento y fecha de subida. Las imágenes se recuperan dinámicamente desde la base de datos y se presentan en una galería estructurada. Esta funcionalidad puede ampliarse para incluir operaciones de CRUD (crear, leer, actualizar, eliminar) sobre las imágenes.
 
-## 💡 Objetivo
-Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas según el perfil del usuario, ideal como base para sistemas de gestión de contenido, portafolios privados o dashboards con contenido multimedia restringido.
+-  👨 Gestión de usuarios
 
-## 💻 Funcionalidades
+El sistema mantiene una tabla de usuarios que permite la autenticación, visualización y gestión básica del perfil del usuario autenticado. Se gestionan las sesiones mediante cookies seguras, y se incluye la opción de cerrar sesión para invalidar el acceso.
 
+-  CRUD Usuario Administrador
 
+ Cuando un administrador inicia sesión, se le habilitan funcionalidades avanzadas de gestión. Estas incluyen:
+
+- - Gestión de Usuarios (CRUD): el administrador puede crear, leer, actualizar y eliminar registros de usuarios desde una interfaz dedicada. Esto permite un control completo sobre el acceso a la plataforma.
+
+- - Gestión de Imágenes (CRUD): el administrador también puede realizar operaciones de mantenimiento sobre las imágenes subidas por cualquier usuario. Puede visualizar, modificar metadatos, eliminar imágenes o asociarlas a distintos usuarios si es necesario.
 
 # ⚙️ Requisitos Técnicos
 ## 🎨 Frontend
