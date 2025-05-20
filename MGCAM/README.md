@@ -2,7 +2,8 @@
 Este proyecto es una aplicación desarrollada en Python que permite la gestión dinámica de imágenes a través de una interfaz sencilla y personalizada según el usuario que inicia sesión.
 
 ## 🛠️ Características principales
-- 🔐 Autenticación de usuarios con nombre de usuario y contraseña encriptada usando MD5.
+- 🔐 Autenticación de usuarios: 
+El sistema implementa un mecanismo de autenticación basado en credenciales, donde los usuarios deben ingresar su nombre de usuario y contraseña para acceder a las funcionalidades protegidas. La contraseña se almacena utilizando una función hash (MD5 en este caso), mejorando así la seguridad frente a accesos no autorizados.
 
 - 👥 Soporte para múltiples roles de usuario (por ejemplo, user1, admin), con acceso diferenciado a contenidos.
 
@@ -14,6 +15,10 @@ Este proyecto es una aplicación desarrollada en Python que permite la gestión 
 
 ## 💡 Objetivo
 Ofrecer una solución simple pero eficaz para mostrar imágenes personalizadas según el perfil del usuario, ideal como base para sistemas de gestión de contenido, portafolios privados o dashboards con contenido multimedia restringido.
+
+## 💻 Funcionalidades
+
+
 
 # ⚙️ Requisitos Técnicos
 ## 🎨 Frontend
