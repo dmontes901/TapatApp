@@ -105,9 +105,10 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 
 ## Diagrama de clases BackEnd
 
-[Codigo](DBackEnd.mmd)
+[Codigo](diagramaaaa.mmd)
 
-![image](https://github.com/user-attachments/assets/2368a085-bba2-4a66-af5c-aa6588e2457b)
+![image](https://github.com/user-attachments/assets/6576a42e-77df-4a04-acf8-9917953084ce)
+
 
 
 ## Diagrama de clases FrontEnd
