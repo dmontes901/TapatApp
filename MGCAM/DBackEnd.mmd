@@ -1,26 +1,45 @@
 classDiagram
-    direction BT
-    class Usuario {
-        +int id_usuario
-        +string nombre_usuario
-        +string contrasena_md5
-    }
-    class Imagen {
-        +int id_imagen
-        +string ruta_imagen
-        +string descripcion
-        +string titulo
-        +date fecha_subida
-        +int id_usuario
-    }
-    class Sesion {
-        +int id_sesion
-        +int id_usuario
-        +date fecha_inicio
-        +date fecha_fin
-        +string estado
-    }
 
-    Usuario -- Imagen : gestiona
-    Usuario -- Sesion : inicia
-    Imagen -- Usuario : pertenece_a
+class App {
+    +Flask app
+    +secret_key: str
+    +run()
+}
+
+class Usuario {
+    +id: int
+    +username: str
+    +password: str
+    +nombre: str
+}
+
+class Imagen {
+    +id: int
+    +titulo: str
+    +descripcion: str
+    +ruta_imagen: str
+    +fecha_subida: date
+    +usuario_id: int
+}
+
+class DBConnection {
+    +get_db_connection(): Connection
+}
+
+class AuthController {
+    +login()
+    +logout()
+    +register()
+}
+
+class HomeController {
+    +home()
+    +api_imagenes()
+}
+
+App --> AuthController
+App --> HomeController
+AuthController --> Usuario
+HomeController --> Usuario
+HomeController --> Imagen
+App --> DBConnection
