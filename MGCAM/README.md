@@ -112,7 +112,8 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 
 [Codigo](DFrontEnd.mmd)
 
-![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/98341aed-a0e9-497a-9089-d088332d0663)
+
 
 ### Login
 ![image](https://github.com/user-attachments/assets/207fafb7-e5f4-4efa-8aaa-f5d2cbb6d90f)
