@@ -83,7 +83,8 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 
 ## Modelo E/R
 
-![image](https://github.com/user-attachments/assets/08b09712-ac63-47d3-8a7c-5863d0c34d0d)
+![image](https://github.com/user-attachments/assets/8a9972b8-83bf-4ec1-8c2e-b45da8f2f793)
+
 
 ## Diagrama de arquitectura
 
