@@ -30,9 +30,9 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 ## 🎨 Frontend
 ### Wireframes/Interfaz:
 
-- HTML5 + CSS3 básico (plantillas Jinja2 desde Flask)
+- HTML + CSS básico (Flask)
 
-- Estilo simple y responsive con CSS puro
+- Estilo simple y responsive con CSS
 
 ### Arquitectura de carpetas:
 
