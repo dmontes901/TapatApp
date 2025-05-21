@@ -1,24 +1,38 @@
-graph TD
-    %% Pantallas principales del front-end
-    Inicio["Página de Inicio"]
-    Login["Login de Usuario"]
-    Registro["Registro de Usuario"]
-    Home["Panel Principal (Home)"]
-    GestionUsuarios["Gestión de Usuarios (Admin)"]
-    GestionImagenes["Gestión de Imágenes (Admin)"]
-    Perfil["Perfil de Usuario"]
+classDiagram
 
-    %% Relaciones entre pantallas
-    Inicio --> Login
-    Inicio --> Registro
-    Login --> Home
-    Registro --> Login
-    Home --> Perfil
-    Home --> GestionUsuarios
-    Home --> GestionImagenes
+class LoginPage {
+    +mostrarFormularioLogin()
+    +validarFormulario()
+    +enviarCredenciales()
+}
 
-    %% Relaciones con entidades de la base de datos
-    Home -->|Consulta| Imagen[(Tabla imagenes)]
-    Perfil -->|Consulta / Edita| Usuario[(Tabla usuarios)]
-    GestionImagenes -->|Consulta / Inserta / Elimina| Imagen
-    GestionUsuarios -->|Consulta / Inserta / Edita / Elimina| Usuario
+class RegisterPage {
+    +mostrarFormularioRegistro()
+    +validarCampos()
+    +enviarRegistro()
+}
+
+class HomePage {
+    +mostrarGaleria()
+    +cargarImagenes()
+    +mostrarUsuario()
+}
+
+class ImagenItem {
+    +titulo: str
+    +descripcion: str
+    +ruta_imagen: str
+    +fecha_subida: date
+    +render(): HTMLElement
+}
+
+class ApiClient {
+    +fetchImagenes(): Promise
+    +enviarLogin(data): Promise
+    +enviarRegistro(data): Promise
+}
+
+LoginPage --> ApiClient
+RegisterPage --> ApiClient
+HomePage --> ApiClient
+HomePage --> ImagenItem
