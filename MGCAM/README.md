@@ -123,11 +123,11 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 
 
 ### Registro
-![image](https://github.com/user-attachments/assets/4f2d32bf-475d-4f03-a32c-e122fedab399)
+![image](https://github.com/user-attachments/assets/99c93a6b-5345-410b-8f91-c9e10779fd64)
 
 
 ### Login completado
-![image](https://github.com/user-attachments/assets/72385626-74a1-4e47-9322-e00fb28905c3)
+![image](https://github.com/user-attachments/assets/a428f443-ca2c-4385-a1e4-90131f13b244)
 
 
 ## Test Unitari
