@@ -119,7 +119,7 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 
 
 ### Login
-![image](https://github.com/user-attachments/assets/207fafb7-e5f4-4efa-8aaa-f5d2cbb6d90f)
+![image](https://github.com/user-attachments/assets/7d72ca3a-cc5a-4b91-9569-e80e140f51bb)
 
 
 ### Registro
