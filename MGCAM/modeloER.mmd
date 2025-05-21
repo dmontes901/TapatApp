@@ -1,30 +1,19 @@
 erDiagram
-    USUARIO ||--o{ IMAGEN : gestiona
-    USUARIO ||--o{ SESION : realiza
-    IMAGEN ||--o{ RUTA : contiene
 
-    USUARIO {
-        int id_usuario PK
-        string nombre_usuario
-        string email
-        string contrasena_md5
-        string telefono
-        enum rol "Admin | User"
-    }
+USUARIOS ||--o{ IMAGENES : tiene
 
-    IMAGEN {
-        int id_imagen PK
-        string ruta_imagen
-        string descripcion
-        string titulo
-        date fecha_subida
-        int id_usuario FK
-    }
+USUARIOS {
+    int id PK
+    string username
+    string password
+    string nombre
+}
 
-    SESION {
-        int id_sesion PK
-        int id_usuario FK
-        date fecha_inicio
-        date fecha_fin
-        enum estado "Activa | Cerrada"
-    }
+IMAGENES {
+    int id PK
+    string titulo
+    string descripcion
+    string ruta_imagen
+    date fecha_subida
+    int usuario_id FK
+}
