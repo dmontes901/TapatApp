@@ -87,7 +87,8 @@ El sistema mantiene una tabla de usuarios que permite la autenticación, visuali
 
 ## Diagrama de arquitectura
 
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/f0928961-e912-448c-a054-aeff8d68f20e)
+
 
 # 🔌 End-points WebService
 
