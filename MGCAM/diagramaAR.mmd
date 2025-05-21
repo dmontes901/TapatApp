@@ -1,0 +1,29 @@
+flowchart TD
+
+    subgraph Cliente["🖥️ Cliente (Frontend)"]
+        UI["🌐 Interfaz Web (HTML + CSS + JS)"]
+        JS["🧠 Lógica JS (peticiones fetch, renderizado imágenes)"]
+        UI --> JS
+    end
+
+    subgraph Servidor["🛠️ Servidor (Flask)"]
+        FlaskApp["🐍 Flask (app.py)"]
+        Auth["🔐 Módulo de Autenticación"]
+        UserCtrl["👤 Gestión de Usuarios"]
+        ImgCtrl["🖼️ Gestión de Imágenes"]
+        Routes["🌍 Rutas y API"]
+        Routes --> Auth
+        Routes --> UserCtrl
+        Routes --> ImgCtrl
+        FlaskApp --> Routes
+    end
+
+    subgraph BD["🛢️ Base de Datos (MySQL)"]
+        TablaUsuarios["📄 Tabla: usuarios"]
+        TablaImagenes["📄 Tabla: imagenes"]
+    end
+
+    JS -->|HTTP JSON| FlaskApp
+    FlaskApp --> BD
+    UserCtrl --> TablaUsuarios
+    ImgCtrl --> TablaImagenes
