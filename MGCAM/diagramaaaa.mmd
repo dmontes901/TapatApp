@@ -1,0 +1,50 @@
+classDiagram
+
+class DBConnection {
+    +connect() MySQLConnection
+}
+
+class UsuarioDAO {
+    +get_by_username(username: str) Usuario
+    +insert(usuario: Usuario) void
+    +exists(username: str) bool
+}
+
+class ImagenDAO {
+    +get_by_user_id(user_id: int) List~Imagen~
+    +insert(imagen: Imagen) void
+}
+
+class Usuario {
+    -id: int
+    -username: str
+    -password: str
+    -nombre: str
+}
+
+class Imagen {
+    -id: int
+    -usuario_id: int
+    -titulo: str
+    -descripcion: str
+    -ruta_imagen: str
+    -fecha_subida: datetime
+}
+
+class AppFlask {
+    +routes()
+    -session
+    -render_template()
+    -request
+}
+
+DBConnection <|-- UsuarioDAO
+DBConnection <|-- ImagenDAO
+
+UsuarioDAO --> Usuario
+ImagenDAO --> Imagen
+
+AppFlask --> UsuarioDAO
+AppFlask --> ImagenDAO
+AppFlask --> Usuario
+AppFlask --> Imagen
